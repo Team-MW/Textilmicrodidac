@@ -15,9 +15,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "TRAME — Textile personnalisé",
+  title: "MisterPrint — Textile personnalisé",
   description:
-    "Atelier d'impression textile. Ton textile, ta marque — imprimé comme une affiche de cinéma.",
+    "Atelier d'impression textile. Où chaque détail compte.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

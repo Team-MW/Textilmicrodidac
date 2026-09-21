@@ -1,3 +1,4 @@
+import { BrandLogo } from "./BrandLogo";
 import { footer } from "@/data/site";
 
 export function Footer() {
@@ -6,10 +7,11 @@ export function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid gap-14 border-b border-chalk/10 pb-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="font-[family-name:var(--font-display)] text-4xl font-extrabold tracking-tight text-chalk uppercase md:text-5xl">
-              Trame
-            </p>
-            <p className="mt-4 max-w-sm text-lg text-mist">{footer.tagline}</p>
+            <BrandLogo
+              variant="stack"
+              className="logo-knockout h-auto w-[min(70vw,16rem)] object-contain object-left"
+            />
+            <p className="mt-6 max-w-sm text-lg text-mist">{footer.tagline}</p>
             <a href="#créer" className="cta-primary mt-8 inline-flex">
               Lancer un tirage
             </a>

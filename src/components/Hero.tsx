@@ -1,3 +1,5 @@
+import Image from "next/image";
+import { BrandLogo } from "./BrandLogo";
 import { FabricMesh } from "./FabricMesh";
 
 export function Hero() {
@@ -8,16 +10,29 @@ export function Hero() {
         <div className="fabric-light" />
         <FabricMesh />
         <div className="fabric-grain" />
+
+        {/* Logo mark — fond d'accueil géant */}
+        <div className="logo-bg">
+          <Image
+            src="/brand/logo-mark.png"
+            alt=""
+            width={1200}
+            height={1200}
+            priority
+            className="logo-bg__img"
+          />
+        </div>
       </div>
 
-      <header className="nav-bar relative z-10 flex items-center justify-between px-6 py-6 md:px-12 md:py-8">
-        <a
-          href="/"
-          className="font-[family-name:var(--font-display)] text-sm font-bold tracking-[0.28em] text-chalk uppercase"
-        >
-          Trame
+      <header className="nav-bar relative z-10 flex items-center justify-between px-6 py-5 md:px-12 md:py-7">
+        <a href="/" className="block shrink-0" aria-label="MisterPrint accueil">
+          <BrandLogo
+            variant="ligne"
+            priority
+            className="logo-knockout h-9 w-auto max-w-[min(52vw,280px)] object-contain object-left md:h-11 md:max-w-[320px]"
+          />
         </a>
-        <nav className="flex items-center gap-6 text-[0.7rem] tracking-[0.22em] text-mist uppercase md:gap-8">
+        <nav className="flex items-center gap-5 text-[0.65rem] tracking-[0.22em] text-mist uppercase md:gap-8 md:text-[0.7rem]">
           <a href="#atelier" className="transition-colors hover:text-chalk">
             Atelier
           </a>
@@ -37,39 +52,23 @@ export function Hero() {
       </header>
 
       <div className="relative z-10 flex flex-1 flex-col justify-end px-6 pb-16 md:justify-center md:px-12 md:pb-24 lg:px-16">
-        <div className="max-w-[min(100%,92rem)]">
-          <p className="hero-line mb-4 font-[family-name:var(--font-display)] text-[0.7rem] font-semibold tracking-[0.35em] text-signal uppercase md:mb-6 md:text-xs">
+        <div className="max-w-[min(100%,48rem)]">
+          <p className="hero-line mb-6 font-[family-name:var(--font-display)] text-[0.7rem] font-semibold tracking-[0.35em] text-signal uppercase md:mb-8 md:text-xs">
             Atelier d&apos;impression textile
           </p>
 
-          <h1 className="brand-print" aria-label="TRAME">
-            <span className="brand-print__rise">
-              <span
-                className="brand-print__layer brand-print__layer--ghost brand-print__layer--c"
-                aria-hidden="true"
-              >
-                Trame
-              </span>
-              <span
-                className="brand-print__layer brand-print__layer--ghost brand-print__layer--m"
-                aria-hidden="true"
-              >
-                Trame
-              </span>
-              <span
-                className="brand-print__layer brand-print__layer--ghost brand-print__layer--y"
-                aria-hidden="true"
-              >
-                Trame
-              </span>
-              <span className="brand-print__layer brand-print__layer--base">
-                Trame
-              </span>
+          <h1 className="brand-logo-hero" aria-label="MisterPrint">
+            <span className="brand-print__rise block">
+              <BrandLogo
+                variant="stack"
+                priority
+                className="logo-knockout h-auto w-[min(88vw,34rem)] object-contain object-left drop-shadow-[0_20px_60px_rgba(0,0,0,0.55)] md:w-[min(70vw,40rem)]"
+              />
             </span>
           </h1>
 
-          <p className="hero-support mt-6 max-w-xl text-lg leading-relaxed text-mist md:mt-8 md:text-2xl md:leading-snug">
-            Ton textile. Ta marque. Imprimé comme une affiche de cinéma.
+          <p className="hero-support mt-8 max-w-xl text-lg leading-relaxed text-mist md:mt-10 md:text-2xl md:leading-snug">
+            Ton textile. Ta marque. Où chaque détail compte.
           </p>
 
           <div className="hero-cta mt-10 flex flex-wrap items-center gap-8 md:mt-12">

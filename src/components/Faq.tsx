@@ -22,7 +22,7 @@ export function Faq() {
           <p className="mt-5 text-mist">
             Pas trouvé ta réponse ?{" "}
             <a
-              href="mailto:hello@trame.studio"
+              href="mailto:hello@misterprint.fr"
               className="text-chalk underline decoration-signal/60 underline-offset-4 transition-colors hover:decoration-signal"
             >
               Écris à l&apos;atelier

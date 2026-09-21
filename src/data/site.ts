@@ -30,7 +30,7 @@ export const processSteps = [
 
 export const collections = [
   {
-    code: "TR-01",
+    code: "MP-01",
     name: "Heavyweight Tee",
     weight: "240 g/m²",
     finish: "DTG / Sérigraphie",
@@ -38,7 +38,7 @@ export const collections = [
     note: "Coupe boxy, col renforcé.",
   },
   {
-    code: "TR-02",
+    code: "MP-02",
     name: "Studio Hoodie",
     weight: "400 g/m²",
     finish: "Broderie / DTG",
@@ -46,7 +46,7 @@ export const collections = [
     note: "Molleton brossé, poche kangourou.",
   },
   {
-    code: "TR-03",
+    code: "MP-03",
     name: "Tote Archive",
     weight: "340 g/m²",
     finish: "Sérigraphie",
@@ -54,7 +54,7 @@ export const collections = [
     note: "Anses longues, fond renforcé.",
   },
   {
-    code: "TR-04",
+    code: "MP-04",
     name: "Cap Signal",
     weight: "Structurée",
     finish: "Broderie 3D",
@@ -91,7 +91,7 @@ export const faqItems = [
 ];
 
 export const footer = {
-  tagline: "Textile personnalisé. Impression cinéma.",
+  tagline: "Où chaque détail compte.",
   columns: [
     {
       title: "Studio",
@@ -105,7 +105,7 @@ export const footer = {
     {
       title: "Contact",
       links: [
-        { label: "hello@trame.studio", href: "mailto:hello@trame.studio" },
+        { label: "hello@misterprint.fr", href: "mailto:hello@misterprint.fr" },
         { label: "+33 4 78 00 00 00", href: "tel:+33478000000" },
         { label: "12 rue de la Pression, Lyon", href: "#atelier" },
       ],
@@ -119,5 +119,5 @@ export const footer = {
       ],
     },
   ],
-  legal: "© 2026 TRAME Atelier. Tous droits réservés.",
+  legal: "© 2026 MisterPrint. Tous droits réservés.",
 };
