@@ -17,12 +17,21 @@ export function Hero() {
         >
           Trame
         </a>
-        <nav className="flex items-center gap-8 text-[0.7rem] tracking-[0.22em] text-mist uppercase">
+        <nav className="flex items-center gap-6 text-[0.7rem] tracking-[0.22em] text-mist uppercase md:gap-8">
           <a href="#atelier" className="transition-colors hover:text-chalk">
             Atelier
           </a>
           <a href="#créer" className="transition-colors hover:text-chalk">
             Créer
+          </a>
+          <a
+            href="#collections"
+            className="hidden transition-colors hover:text-chalk sm:inline"
+          >
+            Collections
+          </a>
+          <a href="#faq" className="transition-colors hover:text-chalk">
+            FAQ
           </a>
         </nav>
       </header>
