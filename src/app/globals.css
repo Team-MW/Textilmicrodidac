@@ -122,17 +122,141 @@ body {
   mix-blend-mode: screen;
 }
 
-.logo-bg {
+.logo-field {
   position: absolute;
-  inset: 0;
+  inset: -8%;
   z-index: 2;
   pointer-events: none;
-  background-image: url("/brand/logo-stack-blanc.png");
-  background-repeat: no-repeat;
-  background-position: 62% 40%;
-  background-size: min(115vw, 1040px);
-  animation: logo-bg-float 16s ease-in-out infinite;
-  will-change: transform;
+}
+
+.logo-tile {
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+  mix-blend-mode: screen;
+  user-select: none;
+}
+
+/* Principal — net, grand */
+.logo-tile--hero {
+  top: 50%;
+  left: 58%;
+  width: min(95vw, 900px);
+  transform: translate(-50%, -54%);
+  opacity: 1;
+  z-index: 5;
+  animation: logo-drift-hero 14s ease-in-out infinite;
+  filter: drop-shadow(-6px 0 0 rgba(0, 212, 255, 0.55))
+    drop-shadow(6px 0 0 rgba(255, 43, 214, 0.45))
+    drop-shadow(0 8px 0 rgba(255, 230, 0, 0.35));
+}
+
+.logo-tile--a {
+  top: 2%;
+  left: -2%;
+  width: min(38vw, 340px);
+  opacity: 0.42;
+  transform: rotate(-12deg);
+  animation: logo-drift-a 18s ease-in-out infinite;
+}
+
+.logo-tile--b {
+  top: 4%;
+  right: -4%;
+  width: min(44vw, 400px);
+  opacity: 0.45;
+  transform: rotate(8deg);
+  animation: logo-drift-b 16s ease-in-out infinite;
+}
+
+.logo-tile--c {
+  bottom: -2%;
+  left: -2%;
+  width: min(44vw, 400px);
+  opacity: 0.4;
+  transform: rotate(6deg);
+  animation: logo-drift-c 20s ease-in-out infinite;
+}
+
+.logo-tile--d {
+  bottom: 2%;
+  right: -4%;
+  width: min(40vw, 360px);
+  opacity: 0.42;
+  transform: rotate(-9deg);
+  animation: logo-drift-d 15s ease-in-out infinite;
+}
+
+.logo-tile--e {
+  top: 36%;
+  left: -6%;
+  width: min(32vw, 280px);
+  opacity: 0.36;
+  transform: rotate(18deg);
+  animation: logo-drift-e 22s ease-in-out infinite;
+}
+
+.logo-tile--f {
+  top: 14%;
+  left: 28%;
+  width: min(28vw, 240px);
+  opacity: 0.32;
+  transform: rotate(-16deg);
+  animation: logo-drift-f 17s ease-in-out infinite;
+}
+
+.logo-tile--g {
+  top: 58%;
+  left: 18%;
+  width: min(34vw, 300px);
+  opacity: 0.34;
+  transform: rotate(-7deg);
+  animation: logo-drift-a 19s ease-in-out infinite reverse;
+}
+
+.logo-tile--h {
+  top: 68%;
+  left: 48%;
+  width: min(30vw, 260px);
+  opacity: 0.3;
+  transform: rotate(14deg);
+  animation: logo-drift-b 21s ease-in-out infinite;
+}
+
+.logo-tile--i {
+  top: 28%;
+  right: 2%;
+  width: min(26vw, 220px);
+  opacity: 0.38;
+  transform: rotate(-22deg);
+  animation: logo-drift-c 15s ease-in-out infinite reverse;
+}
+
+.logo-tile--j {
+  bottom: 28%;
+  right: 18%;
+  width: min(24vw, 200px);
+  opacity: 0.28;
+  transform: rotate(11deg);
+  animation: logo-drift-d 23s ease-in-out infinite;
+}
+
+.logo-tile--k {
+  top: -6%;
+  left: 38%;
+  width: min(36vw, 320px);
+  opacity: 0.3;
+  transform: rotate(4deg);
+  animation: logo-drift-e 16s ease-in-out infinite reverse;
+}
+
+.logo-tile--l {
+  bottom: -8%;
+  left: 32%;
+  width: min(38vw, 340px);
+  opacity: 0.32;
+  transform: rotate(-11deg);
+  animation: logo-drift-f 18s ease-in-out infinite reverse;
 }
 
 .logo-bg-veil {
@@ -141,8 +265,59 @@ body {
   z-index: 3;
   pointer-events: none;
   background:
-    linear-gradient(105deg, rgba(11, 14, 17, 0.92) 0%, rgba(11, 14, 17, 0.55) 22%, transparent 48%),
-    linear-gradient(0deg, rgba(11, 14, 17, 0.65) 0%, transparent 32%);
+    linear-gradient(105deg, rgba(11, 14, 17, 0.72) 0%, rgba(11, 14, 17, 0.28) 16%, transparent 38%),
+    linear-gradient(0deg, rgba(11, 14, 17, 0.45) 0%, transparent 22%);
+}
+
+/* —— Model runway (enter / hold / exit) —— */
+.model-stage {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0 6vw 5vh 0;
+}
+
+.model-slide {
+  position: relative;
+  opacity: 0;
+  will-change: transform, opacity, filter;
+}
+
+.model-slide--solo {
+  width: min(34vw, 380px);
+  animation: model-runway-solo 14s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+
+/* Crop: garde uniquement la 1re vue (face, moitié gauche) */
+.model-slide__frame {
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+}
+
+.model-slide__img {
+  width: 200%;
+  max-width: none;
+  height: 100%;
+  object-fit: cover;
+  object-position: left center;
+  display: block;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55));
+}
+
+@media (max-width: 768px) {
+  .model-stage {
+    padding-bottom: 22vh;
+    padding-right: 4vw;
+  }
+
+  .model-slide--solo {
+    width: min(48vw, 240px);
+  }
 }
 
 .brand-logo-hero {
@@ -284,11 +459,18 @@ body {
   .fabric-weave,
   .fabric-light,
   .drape,
-  .logo-bg,
+  .logo-tile,
+  .model-slide--solo,
   .brand-print__layer--c,
   .brand-print__layer--m,
   .brand-print__layer--y {
     animation: none !important;
+  }
+
+  .model-slide--solo {
+    opacity: 1;
+    transform: none;
+    filter: none;
   }
 
   .brand-print__rise,
@@ -334,13 +516,102 @@ body {
   }
 }
 
-@keyframes logo-bg-float {
+@keyframes logo-drift-hero {
   0%,
   100% {
-    transform: scale(1) rotate(-1.5deg);
+    transform: translate(-50%, -54%) scale(1) rotate(-1deg);
   }
   50% {
-    transform: scale(1.045) rotate(1.5deg);
+    transform: translate(-50%, -56%) scale(1.03) rotate(1deg);
+  }
+}
+
+@keyframes logo-drift-a {
+  0%,
+  100% {
+    transform: rotate(-12deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-8deg) translate(12px, 18px);
+  }
+}
+
+@keyframes logo-drift-b {
+  0%,
+  100% {
+    transform: rotate(8deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(12deg) translate(-14px, 10px);
+  }
+}
+
+@keyframes logo-drift-c {
+  0%,
+  100% {
+    transform: rotate(6deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(2deg) translate(10px, -16px);
+  }
+}
+
+@keyframes logo-drift-d {
+  0%,
+  100% {
+    transform: rotate(-9deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-5deg) translate(-12px, -10px);
+  }
+}
+
+@keyframes logo-drift-e {
+  0%,
+  100% {
+    transform: rotate(18deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(22deg) translate(8px, -12px);
+  }
+}
+
+@keyframes logo-drift-f {
+  0%,
+  100% {
+    transform: rotate(-20deg) translate(0, 0);
+  }
+  50% {
+    transform: rotate(-14deg) translate(-10px, 14px);
+  }
+}
+
+/* Timeline 14s — enter, hold, exit, pause */
+@keyframes model-runway-solo {
+  0% {
+    opacity: 0;
+    transform: translate3d(16vw, 10vh, 0) scale(0.92);
+    filter: blur(4px);
+  }
+  12% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+  }
+  48% {
+    opacity: 1;
+    transform: translate3d(0, -1vh, 0) scale(1);
+    filter: blur(0);
+  }
+  62% {
+    opacity: 0;
+    transform: translate3d(12vw, 8vh, 0) scale(0.94);
+    filter: blur(3px);
+  }
+  100% {
+    opacity: 0;
+    transform: translate3d(16vw, 10vh, 0) scale(0.92);
+    filter: blur(4px);
   }
 }
 

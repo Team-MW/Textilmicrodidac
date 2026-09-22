@@ -1,4 +1,22 @@
+import Image from "next/image";
 import { BrandLogo } from "./BrandLogo";
+// import { ModelShowcase } from "./ModelShowcase"; // gardé de côté — pas affiché
+
+const LOGO_TILES = [
+  { className: "logo-tile logo-tile--hero" },
+  { className: "logo-tile logo-tile--a" },
+  { className: "logo-tile logo-tile--b" },
+  { className: "logo-tile logo-tile--c" },
+  { className: "logo-tile logo-tile--d" },
+  { className: "logo-tile logo-tile--e" },
+  { className: "logo-tile logo-tile--f" },
+  { className: "logo-tile logo-tile--g" },
+  { className: "logo-tile logo-tile--h" },
+  { className: "logo-tile logo-tile--i" },
+  { className: "logo-tile logo-tile--j" },
+  { className: "logo-tile logo-tile--k" },
+  { className: "logo-tile logo-tile--l" },
+];
 
 export function Hero() {
   return (
@@ -7,10 +25,25 @@ export function Hero() {
         <div className="fabric-weave" />
         <div className="fabric-light" />
         <div className="fabric-grain" />
-        <div className="logo-bg" />
+
+        <div className="logo-field">
+          {LOGO_TILES.map((tile) => (
+            <Image
+              key={tile.className}
+              src="/brand/logo-stack-blanc.png"
+              alt=""
+              width={1200}
+              height={1200}
+              priority
+              className={tile.className}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="logo-bg-veil" aria-hidden="true" />
+
+      {/* <ModelShowcase /> — modèles prêts, non affichés */}
 
       <header className="nav-bar relative z-10 flex items-center justify-between px-6 py-5 md:px-12 md:py-7">
         <a href="/" className="block shrink-0" aria-label="MisterPrint accueil">
