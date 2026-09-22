@@ -1,6 +1,4 @@
-import Image from "next/image";
 import { BrandLogo } from "./BrandLogo";
-import { FabricMesh } from "./FabricMesh";
 
 export function Hero() {
   return (
@@ -8,21 +6,11 @@ export function Hero() {
       <div className="fabric-plane" aria-hidden="true">
         <div className="fabric-weave" />
         <div className="fabric-light" />
-        <FabricMesh />
         <div className="fabric-grain" />
-
-        {/* Logo mark — fond d'accueil géant */}
-        <div className="logo-bg">
-          <Image
-            src="/brand/logo-mark.png"
-            alt=""
-            width={1200}
-            height={1200}
-            priority
-            className="logo-bg__img"
-          />
-        </div>
+        <div className="logo-bg" />
       </div>
+
+      <div className="logo-bg-veil" aria-hidden="true" />
 
       <header className="nav-bar relative z-10 flex items-center justify-between px-6 py-5 md:px-12 md:py-7">
         <a href="/" className="block shrink-0" aria-label="MisterPrint accueil">
@@ -51,27 +39,19 @@ export function Hero() {
         </nav>
       </header>
 
-      <div className="relative z-10 flex flex-1 flex-col justify-end px-6 pb-16 md:justify-center md:px-12 md:pb-24 lg:px-16">
-        <div className="max-w-[min(100%,48rem)]">
-          <p className="hero-line mb-6 font-[family-name:var(--font-display)] text-[0.7rem] font-semibold tracking-[0.35em] text-signal uppercase md:mb-8 md:text-xs">
+      <div className="relative z-10 flex flex-1 flex-col justify-end px-6 pb-16 md:px-12 md:pb-20 lg:px-16">
+        <div className="max-w-lg">
+          <p className="hero-line mb-4 font-[family-name:var(--font-display)] text-[0.7rem] font-semibold tracking-[0.35em] text-signal uppercase md:text-xs">
             Atelier d&apos;impression textile
           </p>
 
-          <h1 className="brand-logo-hero" aria-label="MisterPrint">
-            <span className="brand-print__rise block">
-              <BrandLogo
-                variant="stack"
-                priority
-                className="logo-knockout h-auto w-[min(88vw,34rem)] object-contain object-left drop-shadow-[0_20px_60px_rgba(0,0,0,0.55)] md:w-[min(70vw,40rem)]"
-              />
-            </span>
+          <h1 className="hero-support font-[family-name:var(--font-display)] text-3xl font-extrabold leading-tight tracking-tight text-chalk md:text-5xl">
+            Ton textile.
+            <br />
+            Ta marque.
           </h1>
 
-          <p className="hero-support mt-8 max-w-xl text-lg leading-relaxed text-mist md:mt-10 md:text-2xl md:leading-snug">
-            Ton textile. Ta marque. Où chaque détail compte.
-          </p>
-
-          <div className="hero-cta mt-10 flex flex-wrap items-center gap-8 md:mt-12">
+          <div className="hero-cta mt-8 flex flex-wrap items-center gap-8 md:mt-10">
             <a href="#créer" className="cta-primary">
               Créer mon textile
             </a>

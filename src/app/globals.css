@@ -124,24 +124,25 @@ body {
 
 .logo-bg {
   position: absolute;
-  right: -8%;
-  top: 50%;
-  z-index: 1;
-  width: min(92vw, 820px);
-  height: min(92vw, 820px);
-  transform: translateY(-48%);
+  inset: 0;
+  z-index: 2;
   pointer-events: none;
-  animation: logo-bg-float 14s ease-in-out infinite;
+  background-image: url("/brand/logo-stack-blanc.png");
+  background-repeat: no-repeat;
+  background-position: 62% 40%;
+  background-size: min(115vw, 1040px);
+  animation: logo-bg-float 16s ease-in-out infinite;
   will-change: transform;
 }
 
-.logo-bg__img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  mix-blend-mode: screen;
-  opacity: 0.22;
-  filter: saturate(1.15);
+.logo-bg-veil {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(105deg, rgba(11, 14, 17, 0.92) 0%, rgba(11, 14, 17, 0.55) 22%, transparent 48%),
+    linear-gradient(0deg, rgba(11, 14, 17, 0.65) 0%, transparent 32%);
 }
 
 .brand-logo-hero {
@@ -336,10 +337,10 @@ body {
 @keyframes logo-bg-float {
   0%,
   100% {
-    transform: translateY(-48%) scale(1) rotate(-2deg);
+    transform: scale(1) rotate(-1.5deg);
   }
   50% {
-    transform: translateY(-52%) scale(1.04) rotate(2deg);
+    transform: scale(1.045) rotate(1.5deg);
   }
 }
 
